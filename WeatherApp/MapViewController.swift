@@ -7,29 +7,35 @@
 //
 
 import UIKit
+import MapKit
 
-class MapViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+class MapViewController: UIViewController, MKMapViewDelegate{
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBOutlet weak var mapView: MKMapView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        mapView.delegate = self
+        
+        let citys = CitiesData.list
+        
+        for city in citys{
+            let pin = MKPointAnnotation()
+            pin.coordinate = city.coordinates
+            pin.title = city.name
+            self.mapView.addAnnotation(pin)
+        }
     }
-    */
-
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
+        print(view.annotation?.title! as Any)
+        let detailsViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        detailsViewController.coordinates = view.annotation?.coordinate
+        detailsViewController.name = view.annotation?.title!
+        self.navigationController?.pushViewController(detailsViewController, animated: true)
+    }
+    
 }
