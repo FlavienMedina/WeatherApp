@@ -48,7 +48,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1908" y="555.47226386806597"/>
+            <point key="canvasLocation" x="1809" y="555"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FUb-w4-2VG">
@@ -87,14 +87,14 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Header" rowHeight="152" id="0Rl-el-BcS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerCell" rowHeight="152" id="0Rl-el-BcS" customClass="HeaderCell" customModule="WeatherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="152"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Rl-el-BcS" id="8BW-c8-lrD">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="151.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="taU-C1-IJD">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="taU-C1-IJD" customClass="Header">
                                                     <rect key="frame" x="0.0" y="0.0" width="147" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="175" id="CwB-QB-FSQ"/>
@@ -117,8 +117,13 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.2223402457051713" green="1" blue="0.17000205562083248" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="forecastInfos" destination="ur1-uZ-kVX" id="Wa0-dJ-KaK"/>
+                                            <outlet property="icon" destination="taU-C1-IJD" id="ZUw-AM-BXm"/>
+                                            <outlet property="temperature" destination="r5J-Cd-Jfz" id="THk-As-Fl5"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HourlyFourcastText" rowHeight="71" id="3h1-xT-RUa">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hourlyFourcastText" rowHeight="71" id="3h1-xT-RUa" customClass="HourlyForecastCell" customModule="WeatherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="180" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3h1-xT-RUa" id="6Ko-5A-0t3">
@@ -135,15 +140,18 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.92984034084296641" green="0.65309942630584117" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="hourlyInfos" destination="RPt-SX-Apn" id="iTN-1y-ucb"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HourlyForecast " rowHeight="66" id="G1Y-w1-scD">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hourlyForecast " rowHeight="66" id="G1Y-w1-scD" customClass="DailyForecastCell" customModule="WeatherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="251" width="375" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G1Y-w1-scD" id="0e0-Is-CzC">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibI-hK-SNa">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibI-hK-SNa" customClass="Daily">
                                                     <rect key="frame" x="166" y="22" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -153,6 +161,9 @@
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="0.48782852027223611" blue="0.19382739225864187" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dailyInfos" destination="ibI-hK-SNa" id="Cix-fX-EhN"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DailyForecastText" rowHeight="56" id="H3l-wU-h61">
                                         <rect key="frame" x="0.0" y="317" width="375" height="56"/>
@@ -241,6 +252,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p6S-9H-MC5"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Pjk-x1-46P" id="t4r-Ao-RZG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xds-rG-ohJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

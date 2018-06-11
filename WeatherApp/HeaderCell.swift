@@ -13,12 +13,12 @@ class HeaderCell: UITableViewCell {
     
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var temperature: UILabel!
-    @IBOutlet weak var forecast: UILabel!
+    @IBOutlet weak var forecastInfos: UILabel!
     
-    func configure(withCocktail city: City) {
-        icon.sd_setImage(with: URL(string: cocktail.imageUrl))
-        temperature.text = city.name
-        //forecast.text = city.glassType
+    func configure(withCity city: City) {
+        icon.sd_setImage(with: URL(string: (city.forecast?.icon)!))
+        temperature.text = "\(String(describing: city.forecast?.temperature))"
+        forecastInfos.text = city.forecast?.summary
     }
     
 }
