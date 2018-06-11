@@ -19,7 +19,8 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-        
+        self.navigationItem.title = "WeatherApp";
+
         let citys = CitiesData.list
         
         for city in citys{
