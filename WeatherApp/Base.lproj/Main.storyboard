@@ -40,7 +40,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qEb-sg-DZ7"/>
+                    <navigationItem key="navigationItem" id="qEb-sg-DZ7">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="burger" width="2" id="4bk-dW-kTa">
+                            <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="MB5-zd-8p2" id="XFj-2h-Ram"/>
                         <segue destination="rCf-Mw-Fcg" kind="show" identifier="DetailSegue" id="Tta-Sb-pG2"/>
@@ -98,4 +102,7 @@
             <point key="canvasLocation" x="2657" y="555"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="burger" width="50" height="50"/>
+    </resources>
 </document>
