@@ -12,25 +12,10 @@ import CoreLocation
 struct City {
     var name: String
     var coordinates: CLLocationCoordinate2D
-    var icon: String
-    var temperature: Int
-    var summary: String
-    var windSpeed: Int
-    var pressure: Int
-    var humidity: Int
-    var uvIndex: Int
-    var hourlySummary: String
-    var dailySummary: String
-    
-//    var forecast: Forecast?
+    var forecast: Forecast?
     
     init(name: String, coordinates: CLLocationCoordinate2D) {
         self.name = name
-        self.icon = icon
-        self.summary = summary
-        self.windSpeed = windSpeed
-        self.pressure = pressure
-        self.humidity = humidity
-        self.uvIndex = uvIndex
+        self.coordinates = coordinates
     }
 }
