@@ -26,6 +26,11 @@ struct City {
     
     init(name: String, coordinates: CLLocationCoordinate2D) {
         self.name = name
-        self.coordinates = coordinates
+        self.icon = icon
+        self.summary = summary
+        self.windSpeed = windSpeed
+        self.pressure = pressure
+        self.humidity = humidity
+        self.uvIndex = uvIndex
     }
 }
