@@ -90,7 +90,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
                 
                 if let value = response.result.value {
                     let forecastJSON = JSON(value);
-                    print(forecastJSON)
                     self.forecast = Forecast(json: forecastJSON)
                     self.tableView.reloadData()
                 }

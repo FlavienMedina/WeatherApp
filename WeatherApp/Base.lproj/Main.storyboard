@@ -19,24 +19,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZO-Go-Ik1">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="gaW-Ef-NpR"/>
-                                </items>
-                            </navigationBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MB5-zd-8p2">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUJ-Cn-lu5">
+                                <rect key="frame" x="175" y="64" width="200" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="XGP-OQ-TCG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="MB5-zd-8p2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5Da-Va-BVe"/>
-                            <constraint firstItem="nZO-Go-Ik1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="D8k-Bf-jUl"/>
-                            <constraint firstItem="nZO-Go-Ik1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EKW-it-fvu"/>
+                            <constraint firstItem="PUJ-Cn-lu5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CbX-RK-Dd2"/>
+                            <constraint firstItem="PUJ-Cn-lu5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DBz-NB-NAK"/>
+                            <constraint firstItem="PUJ-Cn-lu5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="G9N-dM-8h7"/>
                             <constraint firstItem="MB5-zd-8p2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JMi-DK-yHB"/>
                             <constraint firstItem="MB5-zd-8p2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Pjx-qi-qCk"/>
-                            <constraint firstItem="nZO-Go-Ik1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Xos-dd-2wQ"/>
                             <constraint firstItem="MB5-zd-8p2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p16-dT-jph"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -44,10 +45,14 @@
                     <navigationItem key="navigationItem" id="qEb-sg-DZ7">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="burger" width="2" id="4bk-dW-kTa">
                             <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                            <connections>
+                                <action selector="rightBarBtnOnPress:" destination="BYZ-38-t0r" id="Rge-dO-XT9"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="MB5-zd-8p2" id="XFj-2h-Ram"/>
+                        <outlet property="sideBarConstraint" destination="DBz-NB-NAK" id="HHc-Ww-DYA"/>
                         <segue destination="rCf-Mw-Fcg" kind="show" identifier="DetailSegue" id="Tta-Sb-pG2"/>
                     </connections>
                 </viewController>

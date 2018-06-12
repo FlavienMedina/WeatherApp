@@ -14,14 +14,33 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         return .lightContent
     }
     
+    var sideBarHidden = true
+    
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var rightBarButtonItem: UINavigationItem!
+     @IBAction func rightBarBtnOnPress(_ sender: UIBarButtonItem) {
+        if sideBarHidden {
+            sideBarConstraint.constant = 0
+            UIView.animate(withDuration: 0.3, animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
+        else{
+            sideBarConstraint.constant = 200
+            UIView.animate(withDuration: 0.3, animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
+        sideBarHidden = !sideBarHidden
+    }
+    
+    @IBOutlet weak var sideBarConstraint: NSLayoutConstraint!
     
     var citys: [City] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
+        sideBarConstraint.constant = 200
         self.navigationItem.title = "WeatherApp";
         
         let citys = CitiesData.list
