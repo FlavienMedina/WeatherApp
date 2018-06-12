@@ -24,9 +24,46 @@
                             </mapView>
                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUJ-Cn-lu5">
                                 <rect key="frame" x="175" y="64" width="200" height="603"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qsA-O2-9Rr">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="603"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cityCell" id="n0I-6L-XRe" customClass="CityTableViewCell" customModule="WeatherApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="200" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n0I-6L-XRe" id="27T-xz-pUH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnV-az-0LX">
+                                                            <rect key="frame" x="10" y="10" width="42" height="23.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="DnV-az-0LX" firstAttribute="leading" secondItem="27T-xz-pUH" secondAttribute="leading" constant="10" id="BtC-Ta-5wA"/>
+                                                        <constraint firstAttribute="bottom" secondItem="DnV-az-0LX" secondAttribute="bottom" constant="10" id="Ubw-eY-idv"/>
+                                                        <constraint firstItem="DnV-az-0LX" firstAttribute="top" secondItem="27T-xz-pUH" secondAttribute="top" constant="10" id="xJh-QC-KV8"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="cityName" destination="DnV-az-0LX" id="Epa-Po-yCA"/>
+                                                    <segue destination="rCf-Mw-Fcg" kind="show" identifier="DetailSegueCell" id="69y-Uk-oWK"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="qsA-O2-9Rr" firstAttribute="leading" secondItem="PUJ-Cn-lu5" secondAttribute="leading" id="3n7-7l-CyJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="qsA-O2-9Rr" secondAttribute="bottom" id="Bqo-Ln-Vl1"/>
+                                    <constraint firstItem="qsA-O2-9Rr" firstAttribute="top" secondItem="PUJ-Cn-lu5" secondAttribute="top" id="XC2-7Q-n7q"/>
                                     <constraint firstAttribute="width" constant="200" id="XGP-OQ-TCG"/>
+                                    <constraint firstAttribute="trailing" secondItem="qsA-O2-9Rr" secondAttribute="trailing" id="b5i-Ff-aqb"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -53,6 +90,7 @@
                     <connections>
                         <outlet property="mapView" destination="MB5-zd-8p2" id="XFj-2h-Ram"/>
                         <outlet property="sideBarConstraint" destination="DBz-NB-NAK" id="HHc-Ww-DYA"/>
+                        <outlet property="tableView" destination="qsA-O2-9Rr" id="APz-4Y-1mU"/>
                         <segue destination="rCf-Mw-Fcg" kind="show" identifier="DetailSegue" id="Tta-Sb-pG2"/>
                     </connections>
                 </viewController>
@@ -295,4 +333,7 @@
     <resources>
         <image name="burger" width="50" height="50"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="69y-Uk-oWK"/>
+    </inferredMetricsTieBreakers>
 </document>

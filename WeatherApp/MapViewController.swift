@@ -9,13 +9,16 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, MKMapViewDelegate{
+class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDataSource{
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
-    var sideBarHidden = true
+    @IBOutlet weak var tableView: UITableView!
     
+    var sideBarHidden = true
+    var cities: [City] = CitiesData.list
+
     @IBOutlet weak var mapView: MKMapView!
      @IBAction func rightBarBtnOnPress(_ sender: UIBarButtonItem) {
         if sideBarHidden {
@@ -35,22 +38,39 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     
     @IBOutlet weak var sideBarConstraint: NSLayoutConstraint!
     
-    var citys: [City] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
+        tableView.dataSource = self
         sideBarConstraint.constant = 200
         self.navigationItem.title = "WeatherApp";
-        
-        let citys = CitiesData.list
-        
-        for city in citys{
+                
+        for city in cities{
             let pin = MKPointAnnotation()
             pin.coordinate = city.coordinates
             pin.title = city.name
             self.mapView.addAnnotation(pin)
-            self.citys.append(City(name: city.name, coordinates: city.coordinates))
+            self.cities.append(City(name: city.name, coordinates: city.coordinates))
+            self.tableView.reloadData()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cities.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath) as! CityTableViewCell
+        cell.configure(city: cities[indexPath.row])
+        return cell
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailSegueCell" {
+            if let vc = segue.destination as? DetailsViewController, let index = tableView.indexPathForSelectedRow?.row {
+                vc.selectCity = cities[index]
+            }
         }
     }
     

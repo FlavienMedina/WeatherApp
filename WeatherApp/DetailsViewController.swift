@@ -18,13 +18,17 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
     var coordinates: CLLocationCoordinate2D?
     var name: String?
     var forecast: Forecast?
+    var selectCity: City?
     var city: City?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         self.navigationItem.title = name;
-        
+        if (selectCity != nil){
+            coordinates = selectCity?.coordinates
+            name = selectCity?.name
+        }
         let url: String = "https://api.darksky.net/forecast/6d354170db20f516b7a66c9ec9318c9b/\(coordinates!.latitude),\(coordinates!.longitude)"
         requestForecast(url: url)
     }
@@ -90,6 +94,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
                 
                 if let value = response.result.value {
                     let forecastJSON = JSON(value);
+                    print(forecastJSON)
                     self.forecast = Forecast(json: forecastJSON)
                     self.tableView.reloadData()
                 }
