@@ -79,12 +79,12 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
                 cell.configure(withCity: city)
             }
             return cell
-//        case 1:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath) as! IngredientsCell
-//            if let cocktail = cocktail {
-//                cell.configure(ingredient: cocktail.ingredients[indexPath.row])
-//            }
-//            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "hourlyFourcastText", for: indexPath) as! HourlyForecastCell
+            if let city = city {
+                cell.configure(withCity: city)
+            }
+            return cell
 //        case 2:
 //            let cell = tableView.dequeueReusableCell(withIdentifier: "instructionsCell", for: indexPath) as! InstructionsCell
 //            if let cocktail = cocktail {

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -94,15 +95,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="151.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="taU-C1-IJD" customClass="Header">
-                                                    <rect key="frame" x="0.0" y="0.0" width="147" height="100"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="taU-C1-IJD" customClass="Header">
+                                                    <rect key="frame" x="0.0" y="0.0" width="175" height="120"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="175" id="CwB-QB-FSQ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5J-Cd-Jfz">
-                                                    <rect key="frame" x="283" y="0.0" width="92" height="72"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5J-Cd-Jfz">
+                                                    <rect key="frame" x="183" y="0.0" width="29.5" height="72"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="92" id="2cN-Kp-5IZ"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -116,6 +119,15 @@
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.2223402457051713" green="1" blue="0.17000205562083248" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="taU-C1-IJD" firstAttribute="top" secondItem="r5J-Cd-Jfz" secondAttribute="top" id="26R-on-cVy"/>
+                                                <constraint firstItem="taU-C1-IJD" firstAttribute="top" secondItem="8BW-c8-lrD" secondAttribute="top" id="CYv-sU-wuE"/>
+                                                <constraint firstItem="r5J-Cd-Jfz" firstAttribute="leading" secondItem="taU-C1-IJD" secondAttribute="trailing" constant="8" id="Mh6-hv-tMQ"/>
+                                                <constraint firstItem="taU-C1-IJD" firstAttribute="leading" secondItem="8BW-c8-lrD" secondAttribute="leading" id="Svd-ZR-bK7"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="r5J-Cd-Jfz" secondAttribute="bottom" constant="69" id="ay3-pd-HZn"/>
+                                                <constraint firstAttribute="bottom" secondItem="taU-C1-IJD" secondAttribute="bottom" constant="32" id="dLG-cR-ZAw"/>
+                                                <constraint firstAttribute="trailing" secondItem="r5J-Cd-Jfz" secondAttribute="trailing" id="dNd-AY-gXt"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="forecastInfos" destination="ur1-uZ-kVX" id="Wa0-dJ-KaK"/>
