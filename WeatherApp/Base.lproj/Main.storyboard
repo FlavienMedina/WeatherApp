@@ -98,7 +98,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="151.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="taU-C1-IJD" customClass="Header">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="taU-C1-IJD">
                                                     <rect key="frame" x="0.0" y="0.0" width="147" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="175" id="CwB-QB-FSQ"/>

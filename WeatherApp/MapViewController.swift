@@ -17,6 +17,8 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var rightBarButtonItem: UINavigationItem!
     
+    var citys: [City] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
@@ -29,11 +31,11 @@ class MapViewController: UIViewController, MKMapViewDelegate{
             pin.coordinate = city.coordinates
             pin.title = city.name
             self.mapView.addAnnotation(pin)
+            self.citys.append(City(name: city.name, coordinates: city.coordinates))
         }
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
-        print(view.annotation?.title! as Any)
         let detailsViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
         detailsViewController.coordinates = view.annotation?.coordinate
         detailsViewController.name = view.annotation?.title!
