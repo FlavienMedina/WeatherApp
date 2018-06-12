@@ -17,9 +17,9 @@ class HeaderCell: UITableViewCell {
     
     func configure(forecast: Forecast) {
         print(forecast)
-//        icon.sd_setImage(with: URL(string: (forecast.icon)))
-        temperature.text = "pomme"
-//        forecastInfos.text = forecast.summary
+        temperature.text = "\(forecast.temperature)"
+        forecastInfos.text = forecast.summary
+        icon.image = UIImage(named: "\(forecast.icon)")
     }
     
 }

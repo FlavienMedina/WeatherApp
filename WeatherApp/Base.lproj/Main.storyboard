@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -141,28 +142,35 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="151.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="taU-C1-IJD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="147" height="100"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="taU-C1-IJD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="175" height="152"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="175" id="CwB-QB-FSQ"/>
+                                                        <constraint firstAttribute="width" constant="175" id="rGa-Vo-tmp"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5J-Cd-Jfz">
-                                                    <rect key="frame" x="283" y="0.0" width="92" height="72"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ur1-uZ-kVX">
+                                                    <rect key="frame" x="192" y="37" width="42" height="50"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ur1-uZ-kVX">
-                                                    <rect key="frame" x="166" y="113" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5J-Cd-Jfz">
+                                                    <rect key="frame" x="192" y="8" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.2223402457051713" green="1" blue="0.17000205562083248" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="r5J-Cd-Jfz" firstAttribute="leading" secondItem="ur1-uZ-kVX" secondAttribute="leading" id="24e-ki-Gx9"/>
+                                                <constraint firstItem="r5J-Cd-Jfz" firstAttribute="leading" secondItem="taU-C1-IJD" secondAttribute="trailing" constant="17" id="Hce-u8-kVp"/>
+                                                <constraint firstItem="taU-C1-IJD" firstAttribute="top" secondItem="8BW-c8-lrD" secondAttribute="top" id="KBV-07-2yB"/>
+                                                <constraint firstItem="ur1-uZ-kVX" firstAttribute="top" secondItem="r5J-Cd-Jfz" secondAttribute="bottom" constant="8" symbolic="YES" id="cEa-PO-G9R"/>
+                                                <constraint firstItem="taU-C1-IJD" firstAttribute="leading" secondItem="8BW-c8-lrD" secondAttribute="leading" id="vll-3L-wlZ"/>
+                                                <constraint firstItem="r5J-Cd-Jfz" firstAttribute="top" secondItem="8BW-c8-lrD" secondAttribute="topMargin" constant="-3" id="yQ2-rW-pwC"/>
+                                                <constraint firstItem="taU-C1-IJD" firstAttribute="centerY" secondItem="8BW-c8-lrD" secondAttribute="centerY" id="z1v-j4-bOU"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="forecastInfos" destination="ur1-uZ-kVX" id="Wa0-dJ-KaK"/>
@@ -170,7 +178,7 @@
                                             <outlet property="temperature" destination="r5J-Cd-Jfz" id="THk-As-Fl5"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hourlyFourcastText" rowHeight="71" id="3h1-xT-RUa" customClass="HourlyForecastCell" customModule="WeatherApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hourlyForecastText" rowHeight="71" id="3h1-xT-RUa" userLabel="hourlyForecastText" customClass="HourlyForecastCell" customModule="WeatherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="180" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3h1-xT-RUa" id="6Ko-5A-0t3">
@@ -191,7 +199,7 @@
                                             <outlet property="hourlyInfos" destination="RPt-SX-Apn" id="iTN-1y-ucb"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hourlyForecast " rowHeight="66" id="G1Y-w1-scD" customClass="DailyForecastCell" customModule="WeatherApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dailySummary" rowHeight="66" id="G1Y-w1-scD" customClass="DailyForecastCell" customModule="WeatherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="251" width="375" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G1Y-w1-scD" id="0e0-Is-CzC">

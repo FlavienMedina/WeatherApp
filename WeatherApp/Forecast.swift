@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 struct Forecast {
-    var icon, summary, hourlySumary, dailySummary : String
+    var icon, summary, hourlySummary, dailySummary : String
     var temperature, windSpeed, pressure, humidity, uvIndex: Int
 //    var hourly: [(Int, String, Int, Int)]
 //    var daily: [(Int, String, Int, Int)]
@@ -18,7 +18,7 @@ struct Forecast {
     init(json: JSON) {
         self.icon = json["currently"]["icon"].stringValue
         self.summary = json["currently"]["summary"].stringValue
-        self.hourlySumary = json["hourly"]["summary"].stringValue
+        self.hourlySummary = json["hourly"]["summary"].stringValue
         self.dailySummary = json["daily"]["summary"].stringValue
         
         self.temperature = json["currently"]["temperature"].intValue

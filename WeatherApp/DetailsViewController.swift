@@ -34,31 +34,46 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 6
+        return 4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0:
-            return 1
-        case 1:
-            return city?.forecast?.hourlySumary.count ?? 0
-        case 2:
-            return 1
-        case 3:
-            return 1
-        default:
-            return 0
+            case 0:
+                return 1
+            case 1:
+                return 1
+            case 2:
+                return 1
+            default:
+                return 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath) as! HeaderCell
-        if let test = forecast {
-            print(test)
-            cell.configure(forecast: test)
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath) as! HeaderCell
+            if let test = forecast {
+                cell.configure(forecast: test)
+            }
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "hourlyForecastText", for: indexPath) as! HourlyForecastCell
+            if let test = forecast {
+                cell.configure(forecast: test)
+            }
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "dailySummary", for: indexPath) as! DailyForecastCell
+            if let test = forecast {
+                cell.configure(forecast: test)
+            }
+            return cell
+        default:
+            return UITableViewCell()
         }
-        return cell
+
     }
     
     func requestForecast(url : String){

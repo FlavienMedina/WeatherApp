@@ -12,8 +12,8 @@ class DailyForecastCell: UITableViewCell {
 
     @IBOutlet weak var dailyInfos: UILabel!
     
-    func configure(withCity city: City) {
-        dailyInfos.text = city.forecast?.dailySummary
+    func configure(forecast: Forecast) {
+        dailyInfos.text = forecast.dailySummary
     }
 
 }
