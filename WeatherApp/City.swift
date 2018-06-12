@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import SwiftyJSON
 
 struct City {
     var name: String
@@ -18,4 +19,5 @@ struct City {
         self.name = name
         self.coordinates = coordinates
     }
+    
 }

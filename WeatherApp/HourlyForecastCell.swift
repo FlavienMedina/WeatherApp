@@ -12,8 +12,8 @@ class HourlyForecastCell: UITableViewCell {
 
     @IBOutlet weak var hourlyInfos: UILabel!
     
-    func configure(withCity city: City) {
-        hourlyInfos.text = city.forecast?.hourlySumary
+    func configure(forecast: Forecast) {
+        hourlyInfos.text = forecast.hourlySummary
     }
 
 }
