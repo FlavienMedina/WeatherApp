@@ -74,7 +74,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
                 cell.configure(hourly: forecast.hourly[indexPath.row])
             }
             return cell
-        case 2:
+        case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "dailySummary", for: indexPath) as! DailyForecastCell
             if let test = forecast {
                 cell.configure(forecast: test)
