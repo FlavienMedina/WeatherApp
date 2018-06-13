@@ -84,6 +84,23 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
 
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 1:
+            return "Hourly Summary"
+        case 2:
+            return "Hourly Informations"
+        case 3:
+            return "Daily Summary"
+        case 4:
+            return "Daily Informations"
+        case 5:
+            return "Extra Informations"
+        default:
+            return nil
+        }
+    }
+    
     func requestForecast(url : String){
         Alamofire.request(url)
             .responseJSON { response in
