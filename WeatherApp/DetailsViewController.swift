@@ -58,30 +58,35 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath) as! HeaderCell
+            cell.isUserInteractionEnabled = false
             if let test = forecast {
                 cell.configure(forecast: test)
             }
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "hourlyForecastText", for: indexPath) as! HourlyForecastCell
+            cell.isUserInteractionEnabled = false
             if let test = forecast {
                 cell.configure(forecast: test)
             }
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "hourlyDetails", for: indexPath) as! HourlyDetailsCell
+            cell.isUserInteractionEnabled = false
             if let forecast = forecast {
                 cell.configure(hourly: forecast.hourly[indexPath.row])
             }
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "dailySummary", for: indexPath) as! DailyForecastCell
+            cell.isUserInteractionEnabled = false
             if let test = forecast {
                 cell.configure(forecast: test)
             }
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "dailyDetails", for: indexPath) as! DailyDetailsCell
+            cell.isUserInteractionEnabled = false
             if let forecast = forecast {
                 cell.configure(daily: forecast.daily[indexPath.row])
             }
