@@ -29,12 +29,12 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
             coordinates = selectCity?.coordinates
             name = selectCity?.name
         }
-        let url: String = "https://api.darksky.net/forecast/6d354170db20f516b7a66c9ec9318c9b/\(coordinates!.latitude),\(coordinates!.longitude)"
+        let url: String = "https://api.darksky.net/forecast/6d354170db20f516b7a66c9ec9318c9b/\(coordinates!.latitude),\(coordinates!.longitude)?units=si"
         requestForecast(url: url)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,6 +44,8 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
             case 1:
                 return 1
             case 2:
+                return 1
+            case 3:
                 return 1
             default:
                 return 0
@@ -66,6 +68,12 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "dailySummary", for: indexPath) as! DailyForecastCell
+            if let test = forecast {
+                cell.configure(forecast: test)
+            }
+            return cell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "hourlyDetails", for: indexPath) as! HourlyDetailsCell
             if let test = forecast {
                 cell.configure(forecast: test)
             }

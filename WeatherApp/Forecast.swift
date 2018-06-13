@@ -30,8 +30,8 @@ struct Forecast {
         
         
 //        for i in json["hourly"]["data"] {
-//            let ingredient = json["strIngredient\(i)"].stringValue
-//            let measure = json["strMeasure\(i)"].stringValue
+//            let hourly = json["strIngredient\(i)"].stringValue
+//            let daily = json["strMeasure\(i)"].stringValue
 //        }
     }
     
