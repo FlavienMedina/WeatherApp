@@ -16,7 +16,6 @@ class HeaderCell: UITableViewCell {
     @IBOutlet weak var forecastInfos: UILabel!
     
     func configure(forecast: Forecast) {
-        print(forecast)
         temperature.text = "\(forecast.temperature)°C"
         forecastInfos.text = forecast.summary
         icon.image = UIImage(named: "\(forecast.icon)")

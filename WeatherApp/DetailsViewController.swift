@@ -46,7 +46,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
             case 2:
                 return 1
             case 3:
-                return 1
+                return forecast?.hourly.count ?? 0
             default:
                 return 0
         }
@@ -74,8 +74,8 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "hourlyDetails", for: indexPath) as! HourlyDetailsCell
-            if let test = forecast {
-                cell.configure(forecast: test)
+            if let forecast = forecast {
+                cell.configure(hourly: forecast.hourly[indexPath.row])
             }
             return cell
         default:
@@ -102,7 +102,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
                 
                 if let value = response.result.value {
                     let forecastJSON = JSON(value);
-                    print(forecastJSON)
                     self.forecast = Forecast(json: forecastJSON)
                     self.tableView.reloadData()
                 }
