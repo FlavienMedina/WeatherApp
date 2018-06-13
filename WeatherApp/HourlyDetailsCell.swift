@@ -20,7 +20,7 @@ class HourlyDetailsCell: UITableViewCell {
         temp.text = "25°C"
         pressure.text = "5%"
         hour.text = "Minuit"  // A changer 
-       // icon.image = UIImage(named: "\(forecast.icon)")
+        icon.image = UIImage(named: "\(forecast.icon)")
     }
     
 
