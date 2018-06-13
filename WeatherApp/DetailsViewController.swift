@@ -11,7 +11,7 @@ import MapKit
 import Alamofire
 import SwiftyJSON
 
-class DetailsViewController: UIViewController, UITableViewDataSource {
+class DetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -68,7 +68,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
             }
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "hourlyForecastText", for: indexPath) as! HourlyForecastCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "hourlySummary", for: indexPath) as! HourlyForecastCell
             cell.isUserInteractionEnabled = false
             if let forecast = forecast {
                 cell.configure(forecast: forecast)
@@ -118,13 +118,13 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 1:
-            return "Hourly Summary"
+            return ""
         case 2:
-            return "Hourly Informations"
+            return ""
         case 3:
-            return "Daily Summary"
+            return ""
         case 4:
-            return "Daily Informations"
+            return ""
         case 5:
             return "Extra Informations"
         default:
@@ -132,6 +132,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
         }
     }
     
+
     func requestForecast(url : String){
         Alamofire.request(url)
             .responseJSON { response in
