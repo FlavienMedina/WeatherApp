@@ -69,6 +69,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDataSou
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DetailSegueCell" {
             if let vc = segue.destination as? DetailsViewController, let index = tableView.indexPathForSelectedRow?.row {
+                sideBarConstraint.constant = 200
                 vc.selectCity = cities[index]
             }
         }
