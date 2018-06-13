@@ -260,10 +260,6 @@
                                             <outlet property="time" destination="Qrm-4T-wSx" id="sBi-fd-8mR"/>
                                         </connections>
                                     </tableViewCell>
-<<<<<<< HEAD
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dailyDetails" id="7yX-7f-e7w" customClass="DailyDetailsCell" customModule="WeatherApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="361" width="375" height="44"/>
-=======
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dailySummary" rowHeight="66" id="G1Y-w1-scD" customClass="DailyForecastCell" customModule="WeatherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="295" width="375" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -290,56 +286,56 @@
                                             <outlet property="dailyInfos" destination="ibI-hK-SNa" id="Cix-fX-EhN"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DailyForecastInfos" rowHeight="80" id="oFw-FS-Yjs">
-                                        <rect key="frame" x="0.0" y="361" width="375" height="80"/>
->>>>>>> 02a5152e3abf156b98eecaa3fb1449244170b206
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dailyDetails" id="lRH-MQ-Tx8" customClass="DailyDetailsCell" customModule="WeatherApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="361" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7yX-7f-e7w" id="mmv-ib-faT">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lRH-MQ-Tx8" id="CWy-k0-uH9">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojS-Xt-g9n">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VS-az-wpK">
                                                     <rect key="frame" x="317" y="11" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beU-oo-X7T">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFn-zt-ZS2">
                                                     <rect key="frame" x="16" y="11.5" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1dr-Bh-hE6">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kJr-bh-5d1">
                                                     <rect key="frame" x="74" y="2" width="40" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="8RG-wc-xSK"/>
-                                                        <constraint firstAttribute="height" constant="40" id="lX6-gv-lB3"/>
+                                                        <constraint firstAttribute="height" constant="40" id="ZHA-Td-DJ5"/>
+                                                        <constraint firstAttribute="width" constant="40" id="h5J-Br-fzS"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Km1-5C-an2">
-                                                    <rect key="frame" x="271" y="12" width="42" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sum-pU-6R7">
+                                                    <rect key="frame" x="130" y="12" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="ojS-Xt-g9n" firstAttribute="centerY" secondItem="mmv-ib-faT" secondAttribute="centerY" id="8Py-1D-iyW"/>
-                                                <constraint firstItem="1dr-Bh-hE6" firstAttribute="centerY" secondItem="mmv-ib-faT" secondAttribute="centerY" id="9aa-p8-DMU"/>
-                                                <constraint firstItem="beU-oo-X7T" firstAttribute="centerY" secondItem="mmv-ib-faT" secondAttribute="centerY" id="DgS-dc-lCJ"/>
-                                                <constraint firstItem="1dr-Bh-hE6" firstAttribute="leading" secondItem="beU-oo-X7T" secondAttribute="trailing" constant="16" id="JoC-hD-VfD"/>
-                                                <constraint firstItem="beU-oo-X7T" firstAttribute="leading" secondItem="mmv-ib-faT" secondAttribute="leading" constant="16" id="Lea-jH-dCr"/>
-                                                <constraint firstAttribute="trailing" secondItem="ojS-Xt-g9n" secondAttribute="trailing" constant="16" id="O3K-gP-grj"/>
-                                                <constraint firstItem="Km1-5C-an2" firstAttribute="centerY" secondItem="mmv-ib-faT" secondAttribute="centerY" id="QG8-VH-Mvf"/>
-                                                <constraint firstItem="ojS-Xt-g9n" firstAttribute="leading" secondItem="Km1-5C-an2" secondAttribute="trailing" constant="4" id="gOw-7N-kLi"/>
+                                                <constraint firstItem="EFn-zt-ZS2" firstAttribute="leading" secondItem="CWy-k0-uH9" secondAttribute="leading" constant="16" id="9rb-md-SdJ"/>
+                                                <constraint firstItem="EFn-zt-ZS2" firstAttribute="centerY" secondItem="CWy-k0-uH9" secondAttribute="centerY" id="Ddb-86-dGa"/>
+                                                <constraint firstAttribute="trailing" secondItem="6VS-az-wpK" secondAttribute="trailing" constant="16" id="QQG-xI-jw7"/>
+                                                <constraint firstItem="kJr-bh-5d1" firstAttribute="centerY" secondItem="CWy-k0-uH9" secondAttribute="centerY" id="X8z-8N-Sfn"/>
+                                                <constraint firstItem="Sum-pU-6R7" firstAttribute="centerY" secondItem="CWy-k0-uH9" secondAttribute="centerY" id="ZUs-Ik-ziI"/>
+                                                <constraint firstItem="kJr-bh-5d1" firstAttribute="leading" secondItem="EFn-zt-ZS2" secondAttribute="trailing" constant="16" id="izb-5v-f9S"/>
+                                                <constraint firstItem="6VS-az-wpK" firstAttribute="centerY" secondItem="CWy-k0-uH9" secondAttribute="centerY" id="lOf-35-aoc"/>
+                                                <constraint firstItem="Sum-pU-6R7" firstAttribute="leading" secondItem="kJr-bh-5d1" secondAttribute="trailing" constant="16" id="z9H-hl-cSa"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="icon" destination="1dr-Bh-hE6" id="yr0-xe-W8b"/>
-                                            <outlet property="maxTemperature" destination="Km1-5C-an2" id="Ugc-7f-hHl"/>
-                                            <outlet property="minTemperature" destination="ojS-Xt-g9n" id="rYU-bH-M5e"/>
-                                            <outlet property="time" destination="beU-oo-X7T" id="aEE-mw-moY"/>
+                                            <outlet property="icon" destination="kJr-bh-5d1" id="8ih-Xx-UGx"/>
+                                            <outlet property="maxTemperature" destination="Sum-pU-6R7" id="JSA-xd-EPg"/>
+                                            <outlet property="minTemperature" destination="6VS-az-wpK" id="Iqb-X0-ZWp"/>
+                                            <outlet property="time" destination="EFn-zt-ZS2" id="paE-Ga-Kc3"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExtraInformationsInfo" rowHeight="55" id="xDy-0E-Vpj">

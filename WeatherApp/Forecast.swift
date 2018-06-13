@@ -34,7 +34,7 @@ struct Forecast {
             let icon = json["hourly"]["data"][i]["icon"].stringValue
             let time = Date(timeIntervalSince1970: TimeInterval(json["hourly"]["data"][i]["time"].intValue))
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "DDDD" //Specify your format that you want
+            dateFormatter.dateFormat = "HH" //Specify your format that you want
             let strDate = dateFormatter.string(from: time)
             
             let humidity = json["hourly"]["data"][i]["humidity"].doubleValue
@@ -47,9 +47,9 @@ struct Forecast {
             let icon = json["daily"]["data"][i]["icon"].stringValue
             let time = Date(timeIntervalSince1970: TimeInterval(json["daily"]["data"][i]["time"].intValue))
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "HH" //Specify your format that you want
+            dateFormatter.dateFormat = "EEEE" //Specify your format that you want
             let strDate = dateFormatter.string(from: time)
-            
+
             let maxTemperature = json["daily"]["data"][i]["temperatureHigh"].intValue
             let minTemperature = json["daily"]["data"][i]["temperatureLow"].intValue
             let tuple = (icon, strDate, maxTemperature, minTemperature)
