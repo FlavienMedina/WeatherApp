@@ -34,7 +34,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return 7
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,6 +49,10 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
                 return 1
             case 4:
                 return forecast?.daily.count ?? 0
+            case 5:
+                return 1
+            case 6:
+                return 1
             default:
                 return 0
         }
@@ -59,15 +63,15 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath) as! HeaderCell
             cell.isUserInteractionEnabled = false
-            if let test = forecast {
-                cell.configure(forecast: test)
+            if let forecast = forecast {
+                cell.configure(forecast: forecast)
             }
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "hourlyForecastText", for: indexPath) as! HourlyForecastCell
             cell.isUserInteractionEnabled = false
-            if let test = forecast {
-                cell.configure(forecast: test)
+            if let forecast = forecast {
+                cell.configure(forecast: forecast)
             }
             return cell
         case 2:
@@ -80,8 +84,8 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "dailySummary", for: indexPath) as! DailyForecastCell
             cell.isUserInteractionEnabled = false
-            if let test = forecast {
-                cell.configure(forecast: test)
+            if let forecast = forecast {
+                cell.configure(forecast: forecast)
             }
             return cell
         case 4:
@@ -89,6 +93,20 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
             cell.isUserInteractionEnabled = false
             if let forecast = forecast {
                 cell.configure(daily: forecast.daily[indexPath.row])
+            }
+            return cell
+        case 5:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ExtraInfo", for: indexPath) as! ExtraInfoCell
+            cell.isUserInteractionEnabled = false
+            if let forecast = forecast {
+                cell.configure(forecast: forecast)
+            }
+            return cell
+        case 6:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ExtraInfo2", for: indexPath) as! ExtraInfo2Cell
+            cell.isUserInteractionEnabled = false
+            if let forecast = forecast {
+                cell.configure(forecast: forecast)
             }
             return cell
         default:

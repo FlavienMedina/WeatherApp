@@ -19,8 +19,8 @@ class DailyDetailsCell: UITableViewCell {
         print(daily)
         icon.image = UIImage(named: "\(daily.0)")
         time.text = "\(daily.1)"
-        maxTemperature.text = "\(daily.2)°C"
-        minTemperature.text = "\(daily.3)°C"
+        maxTemperature.text = "\(daily.3)°C"
+        minTemperature.text = "\(daily.2)°C"
     }
     
     
