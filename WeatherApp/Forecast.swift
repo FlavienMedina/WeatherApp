@@ -12,7 +12,7 @@ import SwiftyJSON
 struct Forecast {
     var icon, summary, hourlySummary, dailySummary : String
     var temperature, windSpeed, pressure, humidity, uvIndex: Int
-    var hourly: [(String, Int, Double, Int)]
+    var hourly: [(String, String, Double, Int)]
 //    var daily: [(String, Int, Int, Int)]
     
     init(json: JSON) {
@@ -31,10 +31,14 @@ struct Forecast {
         
         for i in 0 ..< json["hourly"]["data"].count {
             let icon = json["hourly"]["data"][i]["icon"].stringValue
-            let time = json["hourly"]["data"][i]["time"].intValue
+            let time = Date(timeIntervalSince1970: TimeInterval(json["hourly"]["data"][i]["time"].intValue))
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH" //Specify your format that you want
+            let strDate = dateFormatter.string(from: time)
+            
             let humidity = json["hourly"]["data"][i]["humidity"].doubleValue
             let temperature = json["hourly"]["data"][i]["temperature"].intValue
-            let tuple = (icon, time, humidity, temperature)
+            let tuple = (icon, strDate, humidity, temperature)
             self.hourly.append(tuple)
         }
     }
