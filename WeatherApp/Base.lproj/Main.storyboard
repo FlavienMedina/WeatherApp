@@ -208,34 +208,8 @@
                                             <outlet property="hourlyInfos" destination="RPt-SX-Apn" id="iTN-1y-ucb"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dailySummary" rowHeight="66" id="G1Y-w1-scD" customClass="DailyForecastCell" customModule="WeatherApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="251" width="375" height="66"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G1Y-w1-scD" id="0e0-Is-CzC">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibI-hK-SNa">
-                                                    <rect key="frame" x="23" y="22" width="329" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ibI-hK-SNa" secondAttribute="trailing" constant="8" id="8aO-n0-aXJ"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ibI-hK-SNa" secondAttribute="bottom" constant="12" id="c5L-t2-Odc"/>
-                                                <constraint firstItem="ibI-hK-SNa" firstAttribute="top" secondItem="0e0-Is-CzC" secondAttribute="topMargin" constant="11" id="p5f-wL-xEI"/>
-                                                <constraint firstItem="ibI-hK-SNa" firstAttribute="leading" secondItem="0e0-Is-CzC" secondAttribute="leadingMargin" constant="8" id="xgF-eG-krO"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="dailyInfos" destination="ibI-hK-SNa" id="Cix-fX-EhN"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hourlyDetails" id="M7a-k7-0hE" customClass="HourlyDetailsCell" customModule="WeatherApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="317" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="251" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M7a-k7-0hE" id="vj6-Sh-tF5">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -261,20 +235,21 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQc-Em-b5K">
-                                                    <rect key="frame" x="271" y="12" width="42" height="20.5"/>
+                                                    <rect key="frame" x="130" y="12" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="ZVL-NU-yOt" firstAttribute="leading" secondItem="Qrm-4T-wSx" secondAttribute="trailing" constant="16" id="Hb0-AV-zHV"/>
-                                                <constraint firstItem="xpD-Yj-CCY" firstAttribute="leading" secondItem="VQc-Em-b5K" secondAttribute="trailing" constant="4" id="MLG-25-ef7"/>
                                                 <constraint firstAttribute="trailing" secondItem="xpD-Yj-CCY" secondAttribute="trailing" constant="16" id="Xq9-Df-hOg"/>
+                                                <constraint firstItem="VQc-Em-b5K" firstAttribute="leading" secondItem="ZVL-NU-yOt" secondAttribute="trailing" constant="16" id="ZEo-ao-xn8"/>
                                                 <constraint firstItem="Qrm-4T-wSx" firstAttribute="leading" secondItem="vj6-Sh-tF5" secondAttribute="leading" constant="16" id="aiS-n3-cKQ"/>
                                                 <constraint firstItem="Qrm-4T-wSx" firstAttribute="centerY" secondItem="vj6-Sh-tF5" secondAttribute="centerY" id="gp1-GL-A5D"/>
                                                 <constraint firstItem="ZVL-NU-yOt" firstAttribute="centerY" secondItem="vj6-Sh-tF5" secondAttribute="centerY" id="lD4-Oc-N9d"/>
-                                                <constraint firstItem="VQc-Em-b5K" firstAttribute="centerY" secondItem="vj6-Sh-tF5" secondAttribute="centerY" id="qgK-fh-Jca"/>
+                                                <constraint firstItem="VQc-Em-b5K" firstAttribute="centerY" secondItem="vj6-Sh-tF5" secondAttribute="centerY" id="pHf-uo-zAj"/>
                                                 <constraint firstItem="xpD-Yj-CCY" firstAttribute="centerY" secondItem="vj6-Sh-tF5" secondAttribute="centerY" id="veM-zs-Ud0"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -283,6 +258,32 @@
                                             <outlet property="icon" destination="ZVL-NU-yOt" id="UxV-fn-h2k"/>
                                             <outlet property="temperature" destination="xpD-Yj-CCY" id="l4k-kD-3oy"/>
                                             <outlet property="time" destination="Qrm-4T-wSx" id="sBi-fd-8mR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dailySummary" rowHeight="66" id="G1Y-w1-scD" customClass="DailyForecastCell" customModule="WeatherApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="295" width="375" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G1Y-w1-scD" id="0e0-Is-CzC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibI-hK-SNa">
+                                                    <rect key="frame" x="23" y="22" width="329" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ibI-hK-SNa" secondAttribute="trailing" constant="8" id="8aO-n0-aXJ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ibI-hK-SNa" secondAttribute="bottom" constant="12" id="c5L-t2-Odc"/>
+                                                <constraint firstItem="ibI-hK-SNa" firstAttribute="top" secondItem="0e0-Is-CzC" secondAttribute="topMargin" constant="11" id="p5f-wL-xEI"/>
+                                                <constraint firstItem="ibI-hK-SNa" firstAttribute="leading" secondItem="0e0-Is-CzC" secondAttribute="leadingMargin" constant="8" id="xgF-eG-krO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dailyInfos" destination="ibI-hK-SNa" id="Cix-fX-EhN"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DailyForecastInfos" rowHeight="80" id="oFw-FS-Yjs">
