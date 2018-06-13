@@ -11,16 +11,16 @@ import UIKit
 class HourlyDetailsCell: UITableViewCell {
     
     @IBOutlet weak var icon: UIImageView!
-    @IBOutlet weak var temperature: UILabel!
+    @IBOutlet weak var temp: UILabel!
     @IBOutlet weak var hour: UILabel!
     @IBOutlet weak var pressure: UILabel!
     
     func configure(forecast: Forecast) {
         print(forecast)
-        temperature.text = "\(forecast.temperature)°C"
-        pressure.text = "\(forecast.pressure)%"
+        temp.text = "25°C"
+        pressure.text = "5%"
         hour.text = "Minuit"  // A changer 
-        icon.image = UIImage(named: "\(forecast.icon)")
+       // icon.image = UIImage(named: "\(forecast.icon)")
     }
     
 
