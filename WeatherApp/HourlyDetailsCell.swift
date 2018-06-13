@@ -16,7 +16,6 @@ class HourlyDetailsCell: UITableViewCell {
     @IBOutlet weak var pressure: UILabel!
     
     func configure(forecast: Forecast) {
-        print(forecast)
         temperature.text = "\(forecast.temperature)°C"
         pressure.text = "\(forecast.pressure)%"
         hour.text = "Minuit"  // A changer 

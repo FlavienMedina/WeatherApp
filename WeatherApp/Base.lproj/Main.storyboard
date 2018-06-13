@@ -233,7 +233,7 @@
                                             <outlet property="dailyInfos" destination="ibI-hK-SNa" id="Cix-fX-EhN"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hourlyDetails" rowHeight="56" id="H3l-wU-h61">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hourlyDetails" rowHeight="56" id="H3l-wU-h61" customClass="HourlyDetailsCell" customModule="WeatherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="317" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H3l-wU-h61" id="e4X-xz-eKT" customClass="HourlyDetailsCell" customModule="WeatherApp" customModuleProvider="target">
@@ -279,6 +279,9 @@
                                                 <outlet property="temperature" destination="gMR-Kd-xfb" id="v2V-hM-K0J"/>
                                             </connections>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="temperature" destination="M2f-1W-MEl" id="V08-3z-T1c"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DailyForecastInfos" rowHeight="57" id="oFw-FS-Yjs">
                                         <rect key="frame" x="0.0" y="373" width="375" height="57"/>
