@@ -44,9 +44,11 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
             case 1:
                 return 1
             case 2:
-                return 1
-            case 3:
                 return forecast?.hourly.count ?? 0
+            case 3:
+                return 1
+            case 4:
+                return forecast?.daily.count ?? 0
             default:
                 return 0
         }
@@ -67,21 +69,27 @@ class DetailsViewController: UIViewController, UITableViewDataSource {
             }
             return cell
         case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "dailySummary", for: indexPath) as! DailyForecastCell
-            if let test = forecast {
-                cell.configure(forecast: test)
-            }
-            return cell
-        case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "hourlyDetails", for: indexPath) as! HourlyDetailsCell
             if let forecast = forecast {
                 cell.configure(hourly: forecast.hourly[indexPath.row])
             }
             return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "dailySummary", for: indexPath) as! DailyForecastCell
+            if let test = forecast {
+                cell.configure(forecast: test)
+            }
+            return cell
+        case 4:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "dailyDetails", for: indexPath) as! DailyDetailsCell
+            if let forecast = forecast {
+                cell.configure(daily: forecast.daily[indexPath.row])
+            }
+            return cell
         default:
             return UITableViewCell()
         }
-
+        
     }
     
     func requestForecast(url : String){
